@@ -1,15 +1,31 @@
+<?php
+
+// admin users
+$admin_menu_items = ['Dashboard', 'Pedidos', 'Relatórios', 'Clientes', 'Vendas', 'Contas', 'Configurações', 'Perfil'];
+
+// seller 
+$seller_menu_items = ['Dashboard', 'Pedidos', 'Clientes', 'Vendas', 'Perfil'];
+
+// dynamic choose logged in user
+$menu_items = rand(0, 1) == 0 ? $admin_menu_items : $seller_menu_items;
+
+?>
+
+
 <nav class="main-header navbar navbar-expand navbar-white navbar-light">
     <!-- Left navbar links -->
     <ul class="navbar-nav">
         <li class="nav-item">
             <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
         </li>
-        <li class="nav-item d-none d-sm-inline-block">
-            <a href="./adminlte/index3.html" class="nav-link">Home</a>
-        </li>
-        <li class="nav-item d-none d-sm-inline-block">
-            <a href="#" class="nav-link">Contact</a>
-        </li>
+
+        <?php for ($i = 0; $i < count($menu_items); $i++) : ?>
+            <li class="nav-item d-none d-sm-inline-block">
+                <a href="./adminlte/index<?= $i ?>.html" class="nav-link">
+                    <?= $menu_items[$i] ?>
+                </a>
+            </li>
+        <?php endfor ?>
     </ul>
 
     <!-- Right navbar links -->

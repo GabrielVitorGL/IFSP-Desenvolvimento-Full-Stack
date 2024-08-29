@@ -13,6 +13,7 @@
 
 <body class="hold-transition sidebar-mini">
     <div class="wrapper">
+        <?php include('./libraries/aula02.php') ?>
         <?php include('./includes/component/navbar.php') ?>
         <?php include('./includes/component/sidebar.php') ?>
 
