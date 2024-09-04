@@ -146,13 +146,17 @@ $m = [
 
 foreach ($m as $row) {
   // PRINTAR MATRIZ: 
-  // print_r($row).'<br><br>'; // printa na tela automaticamente
-  // echo print_r($row, true).'<br><br>'; // passando o argumento true a função print_r retorna uma string e nós temos que cuidar da exibição
+    // printa na tela automaticamente:
+    // print_r($row).'<br><br>'; 
+  
+    // passando o argumento true a função print_r retorna uma string e nós temos que cuidar da exibição:
+    // echo print_r($row, true).'<br><br>'; 
 
   foreach ($row as $item) {
     echo "$item - ";
   }
-  echo '<br><br>';
+  echo '<br>';
 }
-
 ```
+
+
