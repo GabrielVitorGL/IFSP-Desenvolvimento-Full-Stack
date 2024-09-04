@@ -107,3 +107,52 @@ após isso você poderá importá-lo em seu index ou em outro componente usando:
 **Lembre-se de importar antes do momento da utilização das variáveis, pois a ordem impactará no escopo em que essas variáveis estarão disponíveis* 
 
 <br/><br/>
+# Aula 3
+
+
+<br/><br/>
+
+## Concatenar strings no echo
+Operador de concatenação: `.` (ponto)
+```
+$teste = 'conteudo da variavel'
+echo 'Essa string será concatenada com a variável teste: '.$teste.'<br>';
+```
+### Concatenação com interpolação
+Utilizando aspas duplas (`""`), é possível utilizar variáveis normalmente dentro de uma string
+```
+$soma = 1 + 3;
+echo "A soma dos elementos é: $soma <br><br>";
+```
+
+## Array associativo
+```
+$pessoa = ['nome' => 'Maria', 'sobrenome' => 'Silva', 'idade' => 22, 'genero' => 'feminino'];
+
+echo 'Dados da '.$pessoa['nome'].'<br';
+foreach ($pessoa as $key => $value) {
+  echo "$key => $value<br>";
+}
+```
+
+## Matriz indexada
+```
+$m = [
+  [1,2,3,4,5],
+  [11,12,13,14,15],
+  [21,22,23,24,25],
+  [31,32,33,34,35],
+];
+
+foreach ($m as $row) {
+  // PRINTAR MATRIZ: 
+  // print_r($row).'<br><br>'; // printa na tela automaticamente
+  // echo print_r($row, true).'<br><br>'; // passando o argumento true a função print_r retorna uma string e nós temos que cuidar da exibição
+
+  foreach ($row as $item) {
+    echo "$item - ";
+  }
+  echo '<br><br>';
+}
+
+```
