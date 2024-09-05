@@ -159,4 +159,18 @@ foreach ($m as $row) {
 }
 ```
 
+## Matriz associativa
+```
+$rs = [
+  ['nome' => 'Maria', 'sobrenome' => 'Silva', 'idade' => 22, 'genero' => 'feminino'],
+  ['nome' => 'João', 'sobrenome' => 'Silva', 'idade' => 22, 'genero' => 'masculino'],
+  ['nome' => 'José', 'sobrenome' => 'Silva', 'idade' => 22, 'genero' => 'masculino'],
+  ['nome' => 'Ana', 'sobrenome' => 'Silva', 'idade' => 22, 'genero' => 'feminino'],
+];
+
+foreach ($rs as $pessoa) {
+  echo 'Nome: '.$pessoa['nome'].', idade: '.$pessoa['idade'].', gênero: '.$pessoa['genero'].'<br>';
+  echo '<br>';
+}
+```
 
