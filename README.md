@@ -174,3 +174,14 @@ foreach ($rs as $pessoa) {
 }
 ```
 
+## Foreach dentro do HTML
+Para criar código PHP dentro do HTML, precisamos usar as tags da seguinte forma:
+```
+<?php foreach ($rs as $pessoa) : ?>
+  <div>
+    <h1><?= $pessoa['nome'] ?></h1>
+    <p>Idade: <?= $pessoa['idade'] ?></p>
+    <p>Gênero: <?= $pessoa['genero'] ?></p>
+  </div>
+<?php endforeach ?>
+```
