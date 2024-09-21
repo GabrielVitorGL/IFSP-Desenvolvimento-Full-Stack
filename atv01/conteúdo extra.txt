@@ -1,0 +1,5 @@
+Funcionalidade de tema claro/escuro customizado, implementado com localstorage
+
+Fontes diferentes e animações em textos
+
+Background customizado com textura

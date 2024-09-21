@@ -12,8 +12,8 @@
     <link rel="stylesheet" href="adminlte/plugins/fontawesome-free/css/all.min.css">
     <link rel="stylesheet" href="adminlte/dist/css/adminlte.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/darkmode.css">
     <link rel="icon" href="img/logo.png">
-
 </head>
 
 <?php
@@ -24,7 +24,7 @@ $page_title = 'Sua solução para serviços de streaming';
     <div class="wrapper">
         <?php include('includes/component/navbar.php') ?>
 
-        <div class="content-wrapper ml-0 dark-background">
+        <div class="content-wrapper ml-0 transparent-background">
             <?php include('includes/component/pagetitle.php') ?>
             <?php include('includes/component/maincontent.php') ?>
         </div>
@@ -32,11 +32,10 @@ $page_title = 'Sua solução para serviços de streaming';
         <?php include('includes/component/footer.php') ?>
     </div>
 
-    <script src="adminlte/plugins/jquery/jquery.min.js"></script>
     <script src="adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="adminlte/dist/js/adminlte.min.js"></script>
     <script src="adminlte/plugins/chart.js/Chart.min.js"></script>
-   
+
 </body>
 
 </html>

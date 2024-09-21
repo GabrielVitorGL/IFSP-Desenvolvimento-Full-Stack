@@ -43,7 +43,7 @@
             responsive: true,
             legend: {
                 labels: {
-                    fontColor: '#ffffff'  // Cor branca para os rótulos no modo escuro
+                    fontColor: '#ffffff'
                 }
             }
         }

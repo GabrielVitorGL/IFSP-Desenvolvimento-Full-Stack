@@ -7,10 +7,13 @@
     <title>Assinar - MAXIMUS</title>
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="adminlte/plugins/fontawesome-free/css/all.min.css">
     <link rel="stylesheet" href="adminlte/dist/css/adminlte.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/darkmode.css">
+    <link rel="icon" href="img/logo.png">
 </head>
 
 <?php
@@ -21,7 +24,7 @@ $page_title = 'MAXIMUS: Sua solução para serviços de streaming';
     <div class="wrapper">
         <?php include('includes/component/navbar.php') ?>
 
-        <div class="content-wrapper ml-0">
+        <div class="content-wrapper ml-0 transparent-background">
             <?php include('includes/component/pagetitle.php') ?>
             <?php include('includes/component/maincontent.php') ?>
         </div>

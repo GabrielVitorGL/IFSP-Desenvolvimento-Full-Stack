@@ -44,7 +44,7 @@
         </div>
     </div>
 
-    <!-- Gráfico de serviços de streaming mais vistos -->
+
     <div class="container mt-5 pt-5">
         <div class="row justify-content-center">
             <div class="col-md-12">
@@ -56,12 +56,56 @@
                 <p>
                     Fonte: <a href="https://www.reddit.com/r/dataisbeautiful/comments/g0p0fo/oc_heres_some_data_on_which_video_streaming/#lightbox">Reelgood</a>
                 </p>
+                <p>
+                    Isso nos mostra a quantidade de serviços de streaming que estão disponíveis no mercado e como a <strong>MAXIMUS</strong> é essencial para quem quer ter acesso a todos eles em um só lugar!
+                </p>
             </div>
         </div>
+    </div>
 
-        <div class="container my-5 py-5">
-            <div class="row justify-content-center">
-                <a href="subscribe.php" class="btn btn-primary btn-lg rounded-pill w-100">Assine agora!</a>
+    <div class="container mt-5 pt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-12">
+                <h2>Serviços de Streaming</h2>
+                <p class="mt-5 mb-5">
+
+                </p>
+                <?php include('includes/component/table.php') ?>
             </div>
         </div>
+    </div>
+
+
+    <div class="container my-5 py-5">
+        <div class="row justify-content-center">
+            <a href="subscribe.php" class="btn btn-primary btn-lg rounded-pill w-100">Assine agora!</a>
+        </div>
+    </div>
 </section>
+
+<script>
+    // animação para cada um dos containers, no carregamento de cada um conforme a visibilidade eles deverão vir dos lados
+
+    const sections = document.querySelectorAll('.container');
+
+    const options = {
+        root: null,
+        threshold: 0.2
+    }
+
+    const observer = new IntersectionObserver(function (entries, observer) {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) {
+                return;
+            } else {
+                entry.target.classList.add('animate__animated', 'animate__fadeInRight');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, options);
+
+    sections.forEach(section => {
+        observer.observe(section);
+    });
+
+</script>
