@@ -4,7 +4,11 @@
             <div class="col-md-5">
                 <h2>Já pensou em ter todas as suas séries e filmes em um lugar só?</h2>
                 <p class="mt-5">
-                    A <strong>MAXIMUS</strong> é a solução para você! Nosso hub reúne o catálogo de todos seus serviços de streaming em um lugar só!
+                    A <strong>MAXIMUS</strong> é a solução para você! Nosso hub reúne o catálogo de todos seus serviços de streaming em um lugar só!<br>
+
+                </p>
+                <p>
+                    Temos parceria com os maiores serviços de streaming do mundo, como Netflix, Amazon Prime Video, Disney+ e muito mais!
                 </p>
             </div>
             <div class="col-md-6">
@@ -40,9 +44,24 @@
         </div>
     </div>
 
-    <div class="container my-5 py-5">
+    <!-- Gráfico de serviços de streaming mais vistos -->
+    <div class="container mt-5 pt-5">
         <div class="row justify-content-center">
-            <a href="subscribe.php" class="btn btn-primary btn-lg rounded-pill w-100">Assine agora!</a>
+            <div class="col-md-12">
+                <h2>Os serviços de streaming mais vistos no Brasil</h2>
+                <p class="mt-5 mb-5">
+                    Confira abaixo o gráfico com os serviços de streaming mais vistos no Brasil em 2021:
+                </p>
+                <?php include('includes/component/graph.php') ?>
+                <p>
+                    Fonte: <a href="https://www.reddit.com/r/dataisbeautiful/comments/g0p0fo/oc_heres_some_data_on_which_video_streaming/#lightbox">Reelgood</a>
+                </p>
+            </div>
         </div>
-    </div>
+
+        <div class="container my-5 py-5">
+            <div class="row justify-content-center">
+                <a href="subscribe.php" class="btn btn-primary btn-lg rounded-pill w-100">Assine agora!</a>
+            </div>
+        </div>
 </section>

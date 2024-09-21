@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="adminlte/plugins/fontawesome-free/css/all.min.css">
     <link rel="stylesheet" href="adminlte/dist/css/adminlte.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="img/logo.png">
+
 </head>
 
 <?php
@@ -33,6 +35,8 @@ $page_title = 'Sua solução para serviços de streaming';
     <script src="adminlte/plugins/jquery/jquery.min.js"></script>
     <script src="adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="adminlte/dist/js/adminlte.min.js"></script>
+    <script src="adminlte/plugins/chart.js/Chart.min.js"></script>
+   
 </body>
 
 </html>
