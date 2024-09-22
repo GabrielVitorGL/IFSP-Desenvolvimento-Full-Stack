@@ -1,6 +1,6 @@
 Funcionalidade de tema claro/escuro customizado, implementado com localstorage
 
-Fontes diferentes e animações em textos
+Fontes diferentes, animações em textos e favicon
 
 Background customizado com textura
 
