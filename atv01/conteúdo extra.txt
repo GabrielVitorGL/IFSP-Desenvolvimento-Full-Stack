@@ -3,3 +3,17 @@ Funcionalidade de tema claro/escuro customizado, implementado com localstorage
 Fontes diferentes e animações em textos
 
 Background customizado com textura
+
+Animação nos containers usando keyframes
+
+Sidebar com navegação por seções e contato por email
+
+Carrossel como fundo da segunda página
+
+Formulário com validação
+
+Terceira página com confirmação de criação de conta e modal
+
+Botão para voltar ao topo da página automatizado com o scroll 
+
+Botão para fechar/abrir sidebar com texto e ícone dinâmico

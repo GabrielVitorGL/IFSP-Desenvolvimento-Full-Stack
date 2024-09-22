@@ -1,5 +1,8 @@
-<nav class="main-header navbar navbar-expand navbar-white navbar-light ml-0 custom-background-2">
+<nav class="main-header navbar navbar-expand navbar-white navbar-light custom-background-2">
     <ul class="navbar-nav">
+        <li class="nav-item">
+            <a class="nav-link" data-widget="pushmenu" href="#" role="button" id="navclosebutton"><i class="fas fa-bars custom-text"></i></a>
+        </li>
         <li class="nav-item d-none d-sm-inline-block">
             <a href="index.php" id="logo" class="nav-link custom-text">MAXIMUS</a>
         </li>
@@ -16,7 +19,8 @@
     </ul>
 
     <ul class="navbar-nav ml-auto">
-        <!-- darkmode button, this will change the php dark_mode variable to true or false -->
+
+
         <li class="nav-item">
             <a class="nav-link" href="#" role="button" id="darkmode">
                 <i class="fas fa-moon custom-text"></i>
@@ -46,8 +50,10 @@
 
     if (localStorage.getItem('dark_mode') === 'true') {
         addStyles('css/darkmode.css');
-    } else {
+    } else if (localStorage.getItem('dark_mode') === 'false') {
         removeStyles();
+    } else {
+        localStorage.setItem('dark_mode', 'true');
     }
 
     document.getElementById('darkmode').addEventListener('click', () => {

@@ -1,4 +1,4 @@
-<section class="content-header">
+<section class="content-header position-relative">
     <div class="container-fluid">
         <div class="row my-2 pt-2">
             <div class="flex mx-auto">

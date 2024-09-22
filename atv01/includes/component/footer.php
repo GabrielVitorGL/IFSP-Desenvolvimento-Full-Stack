@@ -1,4 +1,4 @@
-<footer class="main-footer ml-0 custom-background-2">
+<footer class="main-footer custom-background-2">
     <div class="float-right d-none d-sm-block">
         <b>Versão</b> 1.0
     </div>

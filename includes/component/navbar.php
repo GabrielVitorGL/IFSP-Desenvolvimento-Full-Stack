@@ -64,13 +64,13 @@ $menu_items = rand(0, 1) == 0 ? $admin_menu_items : $seller_menu_items;
         </li>
 
         <a href="virus.com.br" class="user-panel ml-4 mr-3 pt-0.5 d-flex text-black-50">
-           
-                <i class="bi bi-person-circle my-auto fs-1 ml-1"></i>
 
-                <div class="info">
-                    <span class="d-block">Alexander Pierce</span>
-                </div>
-            
+            <i class="bi bi-person-circle my-auto fs-1 ml-1"></i>
+
+            <div class="info">
+                <span class="d-block">Alexander Pierce</span>
+            </div>
+
         </a>
     </ul>
 </nav>

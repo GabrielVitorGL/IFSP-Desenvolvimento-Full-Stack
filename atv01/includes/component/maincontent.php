@@ -30,7 +30,7 @@
         </div>
     </div>
 
-    <div class="container mt-5 pt-5">
+    <div class="container mt-5 pt-5" id="devices">
         <div class="row justify-content-between">
             <div class="col-md-5">
                 <h2>Assista de onde estiver!</h2>
@@ -47,7 +47,7 @@
 
     <div class="container mt-5 pt-5">
         <div class="row justify-content-center">
-            <div class="col-md-12">
+            <div class="col-md-12" id="stats">
                 <h2>Os serviços de streaming mais vistos no Brasil</h2>
                 <p class="mt-5 mb-5">
                     Confira abaixo o gráfico com os serviços de streaming mais vistos no Brasil em 2021:
@@ -63,7 +63,7 @@
         </div>
     </div>
 
-    <div class="container mt-5 pt-5">
+    <div class="container mt-5 pt-5" id="services">
         <div class="row justify-content-center">
             <div class="col-md-12">
                 <h2>Serviços de Streaming</h2>
@@ -82,30 +82,3 @@
         </div>
     </div>
 </section>
-
-<script>
-    // animação para cada um dos containers, no carregamento de cada um conforme a visibilidade eles deverão vir dos lados
-
-    const sections = document.querySelectorAll('.container');
-
-    const options = {
-        root: null,
-        threshold: 0.2
-    }
-
-    const observer = new IntersectionObserver(function (entries, observer) {
-        entries.forEach(entry => {
-            if (!entry.isIntersecting) {
-                return;
-            } else {
-                entry.target.classList.add('animate__animated', 'animate__fadeInRight');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, options);
-
-    sections.forEach(section => {
-        observer.observe(section);
-    });
-
-</script>

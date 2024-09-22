@@ -17,16 +17,19 @@
 </head>
 
 <?php
-$page_title = 'MAXIMUS: Sua solução para serviços de streaming';
+$page_title = 'Assine agora e tenha acesso a todos os seus filmes e séries favoritos!';
 ?>
 
-<body class="hold-transition sidebar-mini">
+<body class="hold-transition sidebar-mini sidebar-collapse">
+    <?php include('includes/component/backtotop.php') ?>
     <div class="wrapper">
         <?php include('includes/component/navbar.php') ?>
+        <?php include('includes/component/sidebar.php') ?>
 
-        <div class="content-wrapper ml-0 transparent-background">
+        <div class="content-wrapper transparent-background">
+            <?php include('includes/component/carrousel.php') ?>
             <?php include('includes/component/pagetitle.php') ?>
-            <?php include('includes/component/maincontent.php') ?>
+            <?php include('includes/component/form.php') ?>
         </div>
 
         <?php include('includes/component/footer.php') ?>
@@ -35,6 +38,8 @@ $page_title = 'MAXIMUS: Sua solução para serviços de streaming';
     <script src="adminlte/plugins/jquery/jquery.min.js"></script>
     <script src="adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="adminlte/dist/js/adminlte.min.js"></script>
+    <script src="adminlte/plugins/jquery-validation/jquery.validate.min.js"></script>
+    <script src="adminlte/plugins/jquery-validation/additional-methods.min.js"></script>
 </body>
 
 </html>
