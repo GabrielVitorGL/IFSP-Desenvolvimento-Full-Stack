@@ -21,6 +21,7 @@
         <div class="content-wrapper">
             <?php include('./includes/component/breadcrumb.php') ?>
             <?php include('./includes/component/maincontent.php') ?>
+            <?php include('./includes/component/form.php') ?>
         </div>
 
         <?php include('./includes/component/footer.php') ?>
