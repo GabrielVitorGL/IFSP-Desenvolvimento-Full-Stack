@@ -20,18 +20,6 @@
 
         <div class="row">
             <div class="col-md-6 mx-auto">
-
-                <?php
-
-                echo $_POST['nome'] . ' ' . $_POST['sobrenome'] . '<br>';
-                echo 'Nasceu em: ' . $_POST['nascimento'] . '<br>';
-                echo 'CPF.: ' . $_POST['cpf'] . '<br>';
-                echo 'RG.: ' . $_POST['rg'] . '<br>';
-                echo 'Endereço.: ' . $_POST['endereco'] . '<br>';
-                echo 'Cidade.: ' . $_POST['cidade'] . '<br>';
-                echo 'Estado.: ' . $_POST['estado'] . '<br>';
-                echo 'Telefone.: ' . $_POST['telefone'] . '<br>';
-                ?>
                 <div class="col-12 d-flex align-items-stretch flex-column">
                     <div class="card bg-light d-flex flex-fill">
                         <div class="card-header text-muted border-bottom-0">
@@ -41,7 +29,7 @@
                             <div class="row">
                                 <div class="col-7">
                                     <h2 class="lead mb-3"><b><?= $_POST['nome'] . ' ' . $_POST['sobrenome'] ?></b></h2>
-                                    <p class="text-muted text-md mb-1"><b>Data de nascimento: </b> <?= date_format($_POST['nascimento'], "Y/m/d") ?> </p>
+                                    <p class="text-muted text-md mb-1"><b>Data de nascimento: </b> <?= date("d/m/Y", strtotime($_POST['nascimento'])) ?> </p>
                                     <p class="text-muted text-md mb-1"><b>CPF: </b> <?= $_POST['cpf'] ?> </p>
                                     <p class="text-muted text-md"><b>RG: </b> <?= $_POST['rg'] ?> </p>
                                     <ul class="ml-4 mb-0 fa-ul text-muted">
@@ -50,17 +38,14 @@
                                     </ul>
                                 </div>
                                 <div class="col-5 text-center">
-                                    <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="user-avatar" class="img-circle img-fluid">
+                                    <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" width="175" height="175" alt="user-avatar" class="img-circle img-fluid">
                                 </div>
                             </div>
                         </div>
                         <div class="card-footer">
                             <div class="text-right">
-                                <a href="#" class="btn btn-sm bg-teal">
-                                    <i class="fas fa-comments"></i>
-                                </a>
-                                <a href="#" class="btn btn-sm btn-primary">
-                                    <i class="fas fa-user"></i> View Profile
+                                <a href="../form.php" class="btn btn-sm btn-primary">
+                                    <i class="fas fa-user mr-2"></i> Voltar para página de cadastro
                                 </a>
                             </div>
                         </div>
