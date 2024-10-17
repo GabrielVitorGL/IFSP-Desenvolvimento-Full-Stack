@@ -30,9 +30,10 @@ if ($conn->query($sql) === TRUE) {
 
 echo "<br>";
 
+$pessoa_id = $conn->insert_id;
 
-$sql = "INSERT INTO endereco (rua, cidade, estado)
-VALUES ('$rua', '$cidade', '$estado')";
+$sql = "INSERT INTO endereco (pessoa_id, rua, cidade, estado)
+VALUES ('$pessoa_id', '$rua', '$cidade', '$estado')";
 if ($conn->query($sql) === TRUE) {
     echo "Cadastro do endereço efetuado com sucesso!";
 } else {
