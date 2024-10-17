@@ -55,8 +55,8 @@
 
                         <div class="card-body">
                             <div class="form-group">
-                                <label for="endereco">Endereço</label>
-                                <input type="text" class="form-control" id="endereco" name="endereco" placeholder="Digite seu endereço">
+                                <label for="rua">Rua e Bairro</label>
+                                <input type="text" class="form-control" id="rua" name="rua" placeholder="Digite sua rua e seu bairro">
                             </div>
                             <div class="form-group">
                                 <label for="cidade">Cidade</label>

@@ -1,3 +1,47 @@
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "full_stack";
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+if ($conn->connect_error) {
+    die("Conexão falhou: " . $conn->connect_error);
+}
+
+$nome = $_POST['nome'];
+$sobrenome = $_POST['sobrenome'];
+$nascimento = $_POST['nascimento'];
+$cpf = $_POST['cpf'];
+$rg = $_POST['rg'];
+
+$rua = $_POST['rua'];
+$cidade = $_POST['cidade'];
+$estado = $_POST['estado'];
+
+$sql = "INSERT INTO pessoa (nome, sobrenome, nascimento, cpf, rg)
+VALUES ('$nome', '$sobrenome', '$nascimento', '$cpf', '$rg')";
+if ($conn->query($sql) === TRUE) {
+    echo "Cadastro da pessoa efetuado com sucesso!";
+} else {
+    echo "Erro: " . $sql . "<br>" . $conn->error;
+}
+
+echo "<br>";
+
+
+$sql = "INSERT INTO endereco (rua, cidade, estado)
+VALUES ('$rua', '$cidade', '$estado')";
+if ($conn->query($sql) === TRUE) {
+    echo "Cadastro do endereço efetuado com sucesso!";
+} else {
+    echo "Erro: " . $sql . "<br>" . $conn->error;
+}
+
+$conn->close();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -28,12 +72,12 @@
                         <div class="card-body pt-0">
                             <div class="row">
                                 <div class="col-7">
-                                    <h2 class="lead mb-3"><b><?= $_POST['nome'] . ' ' . $_POST['sobrenome'] ?></b></h2>
-                                    <p class="text-muted text-md mb-1"><b>Data de nascimento: </b> <?= date("d/m/Y", strtotime($_POST['nascimento'])) ?> </p>
-                                    <p class="text-muted text-md mb-1"><b>CPF: </b> <?= $_POST['cpf'] ?> </p>
-                                    <p class="text-muted text-md"><b>RG: </b> <?= $_POST['rg'] ?> </p>
+                                    <h2 class="lead mb-3"><b><?= $nome . ' ' . $sobrenome ?></b></h2>
+                                    <p class="text-muted text-md mb-1"><b>Data de nascimento: </b> <?= date("d/m/Y", strtotime($nascimento)) ?> </p>
+                                    <p class="text-muted text-md mb-1"><b>CPF: </b> <?= $cpf ?> </p>
+                                    <p class="text-muted text-md"><b>RG: </b> <?= $rg ?> </p>
                                     <ul class="ml-4 mb-0 fa-ul text-muted">
-                                        <li><span class="fa-li"><i class="fas fa-lg fa-building"></i></span> Endereço: <?= $_POST['endereco'] ?>, <?= $_POST['cidade'] ?>, <?= $_POST['estado'] ?></li>
+                                        <li><span class="fa-li"><i class="fas fa-lg fa-building"></i></span> Endereço: <?= $rua . ', ' . $cidade . ' - ' . $estado ?></li>
                                         <li class="mt-3"><span class="fa-li"><i class="fas fa-lg fa-phone"></i></span> Telefone: <?= $_POST['telefone'] ?></li>
                                     </ul>
                                 </div>
