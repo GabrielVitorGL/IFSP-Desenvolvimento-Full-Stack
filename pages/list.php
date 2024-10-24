@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Working with forms</title>
+    <title>Listagem de Usuários</title>
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <link rel="stylesheet" href="../adminlte/plugins/fontawesome-free/css/all.min.css">
@@ -41,7 +41,7 @@
                         <td><?= $pessoa['nascimento'] ?></td>
                         <td>
                             <a href="edit.php?id=<?= $pessoa['id'] ?>" class="mr-3"><i class="fas fa-edit mr-3 text-primary"></i></a>
-                            <a href="exclusao.php?id=<?= $pessoa['id'] ?>"><i class="fas fa-trash text-danger"></i></a>
+                            <a href="../libraries/delete_helper.php?id=<?= $pessoa['id'] ?>"><i class="fas fa-trash text-danger"></i></a>
                         </td>
                     </tr>
                 <?php endforeach; ?>
