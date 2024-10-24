@@ -15,27 +15,24 @@ $sobrenome = $_POST['pessoa']['sobrenome'];
 $nascimento = $_POST['pessoa']['nascimento'];
 $cpf = $_POST['pessoa']['cpf'];
 $rg = $_POST['pessoa']['rg'];
+$id = $_POST['pessoa']['id'];
 
 $rua = $_POST['endereco']['rua'];
 $cidade = $_POST['endereco']['cidade'];
 $estado = $_POST['endereco']['estado'];
 
-$sql = "INSERT INTO pessoa (nome, sobrenome, nascimento, cpf, rg)
-VALUES ('$nome', '$sobrenome', '$nascimento', '$cpf', '$rg')";
+$sql = "UPDATE pessoa SET nome='$nome', sobrenome='$sobrenome', nascimento='$nascimento', cpf='$cpf', rg='$rg' WHERE id=$id";
 if ($conn->query($sql) === TRUE) {
-    echo "Cadastro da pessoa efetuado com sucesso!";
+    echo "Edição da pessoa efetuada com sucesso!";
 } else {
     echo "Erro: " . $sql . "<br>" . $conn->error;
 }
 
 echo "<br>";
 
-$pessoa_id = $conn->insert_id;
-
-$sql = "INSERT INTO endereco (pessoa_id, rua, cidade, estado)
-VALUES ('$pessoa_id', '$rua', '$cidade', '$estado')";
+$sql = "UPDATE endereco SET rua='$rua', cidade='$cidade', estado='$estado' WHERE pessoa_id=$id";
 if ($conn->query($sql) === TRUE) {
-    echo "Cadastro do endereço efetuado com sucesso!";
+    echo "Edição do endereço efetuada com sucesso!";
 } else {
     echo "Erro: " . $sql . "<br>" . $conn->error;
 }
@@ -49,7 +46,7 @@ $conn->close();
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Working with forms</title>
+    <title>Edição da pessoa</title>
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <link rel="stylesheet" href="../adminlte/plugins/fontawesome-free/css/all.min.css">
@@ -60,7 +57,7 @@ $conn->close();
     <div class="wrapper">
 
         <div class="row py-4">
-            <h3 class="mx-auto text-gray">Cadastro efetuado com sucesso!</h3>
+            <h3 class="mx-auto text-gray">Edição efetuada com sucesso!</h3>
         </div>
 
         <div class="row">
@@ -68,7 +65,7 @@ $conn->close();
                 <div class="col-12 d-flex align-items-stretch flex-column">
                     <div class="card bg-light d-flex flex-fill">
                         <div class="card-header text-muted border-bottom-0">
-                            Obrigado por se cadastrar conosco!
+                            Obrigado por se atualizar seu cadastro conosco!
                         </div>
                         <div class="card-body pt-0">
                             <div class="row">
