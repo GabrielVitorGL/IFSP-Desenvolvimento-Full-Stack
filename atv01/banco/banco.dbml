@@ -1,0 +1,76 @@
+// independente
+table planos {
+  id int [pk, increment]
+  nome varchar(50)
+  valor decimal(10, 2)
+  descricao text
+  created_at timestamp
+  updated_at timestamp
+}
+
+// independente
+table clientes {
+  id int [pk, increment]
+  nome varchar(100)
+  email varchar(100) [unique]
+  telefone varchar(20)
+  data_nascimento date
+  id_plano int
+  senha varchar(100)
+  created_at timestamp
+  updated_at timestamp
+}
+ref: clientes.id_plano > planos.id
+
+// independente
+table categorias {
+  id int [pk, increment]
+  nome varchar(30)
+  created_at timestamp
+  updated_at timestamp
+}
+
+// independente
+table conteudos {
+  id int [pk, increment]
+  nome varchar(100)
+  sinopse text
+  duracao_minutos int
+  classificacao varchar(10)
+  imagem_url varchar(255)
+  created_at timestamp
+  updated_at timestamp
+}
+
+// dependente
+table conteudos_assistidos {
+  id int [pk, increment]
+  id_cliente int
+  id_conteudo int
+  created_at timestamp
+  updated_at timestamp
+}
+ref: conteudos_assistidos.id_cliente > clientes.id
+ref: conteudos_assistidos.id_conteudo > conteudos.id
+
+// dependente
+table conteudos_favoritos {
+  id int [pk, increment]
+  id_cliente int
+  id_conteudo int
+  created_at timestamp
+  updated_at timestamp
+}
+ref: conteudos_favoritos.id_cliente > clientes.id
+ref: conteudos_favoritos.id_conteudo > conteudos.id
+
+// dependente
+table conteudos_categorias {
+  id int [pk, increment]
+  id_conteudo int
+  id_categoria int
+}
+ref: conteudos_categorias.id_conteudo > conteudos.id
+ref: conteudos_categorias.id_categoria > categorias.id
+
+
