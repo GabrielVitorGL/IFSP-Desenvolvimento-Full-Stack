@@ -1,4 +1,4 @@
-// independente
+// entidade forte
 table planos {
   id int [pk, increment]
   nome varchar(50)
@@ -8,7 +8,7 @@ table planos {
   updated_at timestamp
 }
 
-// independente
+// entidade forte
 table clientes {
   id int [pk, increment]
   nome varchar(100)
@@ -22,7 +22,7 @@ table clientes {
 }
 ref: clientes.id_plano > planos.id
 
-// independente
+// entidade forte
 table categorias {
   id int [pk, increment]
   nome varchar(30)
@@ -30,7 +30,7 @@ table categorias {
   updated_at timestamp
 }
 
-// independente
+// entidade forte
 table conteudos {
   id int [pk, increment]
   nome varchar(100)
@@ -42,7 +42,7 @@ table conteudos {
   updated_at timestamp
 }
 
-// dependente
+// entidade fraca
 table conteudos_assistidos {
   id int [pk, increment]
   id_cliente int
@@ -53,7 +53,7 @@ table conteudos_assistidos {
 ref: conteudos_assistidos.id_cliente > clientes.id
 ref: conteudos_assistidos.id_conteudo > conteudos.id
 
-// dependente
+// entidade fraca
 table conteudos_favoritos {
   id int [pk, increment]
   id_cliente int
@@ -64,7 +64,7 @@ table conteudos_favoritos {
 ref: conteudos_favoritos.id_cliente > clientes.id
 ref: conteudos_favoritos.id_conteudo > conteudos.id
 
-// dependente
+// entidade fraca
 table conteudos_categorias {
   id int [pk, increment]
   id_conteudo int

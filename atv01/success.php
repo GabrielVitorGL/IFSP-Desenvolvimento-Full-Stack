@@ -1,3 +1,10 @@
+<?php
+include('libraries/success_helper.php');
+include('libraries/subscribe_helper.php');
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -7,7 +14,7 @@
     <title>Inscrição recebida! - MAXIMUS</title>
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="adminlte/plugins/fontawesome-free/css/all.min.css">
     <link rel="stylesheet" href="adminlte/dist/css/adminlte.min.css">
@@ -16,10 +23,7 @@
     <link rel="icon" href="img/logo.png">
 </head>
 
-<?php
-$page_title = 'Inscrição recebida com sucesso!';
 
-?>
 
 <body class="hold-transition sidebar-mini sidebar-collapse texture">
     <?php include('includes/component/backtotop.php') ?>
@@ -28,14 +32,17 @@ $page_title = 'Inscrição recebida com sucesso!';
         <?php include('includes/component/sidebar.php') ?>
 
         <div class="content-wrapper transparent-background  align-items-center d-flex flex-column">
-
             <div class="container my-auto pb-5">
                 <?php include('includes/component/pagetitle.php') ?>
                 <div class="row  mt-5 d-flex align-items-center">
                     <div class="col-md-6 offset-md-3">
                         <div class="alert alert-success" role="alert">
                             <h4 class="alert-heading">Inscrição recebida com sucesso!</h4>
-                            <p>Parabéns! Sua inscrição foi recebida com sucesso. Enviaremos no seu e-mail as instruções para a assinatura.</p>
+                            <p>Parabéns, <?= $nome ?>! Sua inscrição foi recebida com sucesso.</p>
+                            <p><strong>Email:</strong> <?= $email ?></p>
+                            <p><strong>Telefone:</strong> <?= $telefone ?></p>
+                            <p><strong>Data de Nascimento:</strong> <?= $dataNascimento ?></p>
+                            <p><strong>Plano Escolhido:</strong> <?= $nomePlano ?></p>
                             <hr>
                             <p class="mb-0">Clique <a href="index.php" class="">aqui</a> para voltar à página inicial.</p>
                         </div>
