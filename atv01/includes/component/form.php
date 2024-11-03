@@ -7,7 +7,7 @@
                     <h3 class="card-title">Inscreva-se já!</h3>
                 </div>
 
-                <form id="quickForm" action="success.php" method="POST">
+                <form id="quickForm" action="subscribe.php" method="POST">
                     <div class="card-body">
                         <div class="form-group">
                             <label>Escolha seu plano</label>

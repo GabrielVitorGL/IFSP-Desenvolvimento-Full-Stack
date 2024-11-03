@@ -9,7 +9,7 @@
                     </a>
                 </li>
                 <li class="nav-item pt-3">
-                    <a href="subscribe.php" class="nav-link custom-text">
+                    <a href="form_page.php" class="nav-link custom-text">
                         <i class="nav-icon fas fa-pencil-alt"></i>
                         <p>Assine Agora</p>
                     </a>

@@ -1,3 +1,5 @@
+----- PARTE 1: ------
+
 Funcionalidade de tema claro/escuro customizado, implementado com localstorage
 
 Fontes diferentes, animações em textos e favicon
@@ -17,3 +19,21 @@ Terceira página com confirmação de criação de conta e modal
 Botão para voltar ao topo da página automatizado com o scroll 
 
 Botão para fechar/abrir sidebar com texto e ícone dinâmico
+
+----- PARTE 2: ------
+
+Criptografia de senha para salvar os dados no banco
+
+Armazenamento do id do usuário logado no localstorage para consultas
+
+Tela customizada para sucesso ou falha no login
+
+Criação de todas as tabelas e inserção de dados para cada uma
+
+Página de filmes/séries com imagens, descrição, classificação e ano de lançamento
+
+Opção de favoritar filmes/séries com interação com o banco
+
+Página de filmes/séries favoritos com opção de remover favorito
+
+Página de perfil com informações do usuário e opção de editar

@@ -12,7 +12,7 @@
             </a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-            <a href="subscribe.php" class="nav-link custom-text">
+            <a href="form_page.php" class="nav-link custom-text">
                 Assinar
             </a>
         </li>

@@ -78,7 +78,7 @@
 
     <div class="container my-5 py-5">
         <div class="row justify-content-center">
-            <a href="subscribe.php" class="btn btn-primary btn-lg rounded-pill w-100">Assine agora!</a>
+            <a href="form_page.php" class="btn btn-primary btn-lg rounded-pill w-100">Assine agora!</a>
         </div>
     </div>
 </section>
