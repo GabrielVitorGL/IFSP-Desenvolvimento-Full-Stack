@@ -1,6 +1,4 @@
-<?php
-include('libraries/contents_helper.php');
-?>
+<?php include('libraries/contents_helper.php'); ?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -33,7 +31,7 @@ include('libraries/contents_helper.php');
                         <a href="form_page.php" class="btn btn-primary">Ir para a página de cadastro</a>
                     </div>
                 <?php else: ?>
-                    <h1>Conteúdos Disponíveis</h1>
+                    <h1 class="mt-5"><?php echo $page_title; ?></h1>
                     <div class="row mt-5">
                         <?php foreach ($conteudos as $conteudo): ?>
                             <div class="col-md-4">
@@ -41,20 +39,25 @@ include('libraries/contents_helper.php');
                                     <img src="<?php echo htmlspecialchars($conteudo['imagem_url']); ?>" class="card-img-top" alt="Imagem de <?php echo htmlspecialchars($conteudo['nome']); ?>">
                                     <div class="card-body text-dark">
                                         <h5><?php echo htmlspecialchars($conteudo['nome']); ?></h5>
-                                        <!-- collapse -->
                                         <button class="btn btn-link p-0 text-dark mb-3" type="button" data-toggle="collapse" data-target="#collapse<?php echo $conteudo['id']; ?>" aria-expanded="false" aria-controls="collapse<?php echo $conteudo['id']; ?>">
                                             Descrição <i class="ml-1 fas fa-angle-down"></i>
-                                       
                                         </button>
-                                        <p style="font-size: 12px;" class="collapse" id="collapse<?php echo $conteudo['id']; ?>"><?php echo htmlspecialchars($conteudo['sinopse']); ?></p>
+                                        <p style="font-size: 13px;" class="collapse" id="collapse<?php echo $conteudo['id']; ?>"><?php echo htmlspecialchars($conteudo['sinopse']); ?></p>
                                         <p><strong>Ano:</strong> <?php echo htmlspecialchars($conteudo['ano_lancamento']); ?></p>
-                                        <p><strong>Duração:</strong> <?php echo htmlspecialchars($conteudo['duracao_minutos']); ?> min</p>
+                                        <p><strong>Tipo:</strong> <?php echo ucwords(htmlspecialchars($conteudo['tipo'])); ?></p>
+                                        <?php if ($conteudo['tipo'] === 'filme'): ?>
+                                            <p><strong>Duração:</strong> <?php echo htmlspecialchars($conteudo['duracao_minutos']); ?> min</p>
+                                        <?php endif; ?>
                                         <p><strong>Classificação:</strong> <?php echo htmlspecialchars($conteudo['classificacao']); ?></p>
 
                                         <?php if (in_array($conteudo['id'], $favoritos)): ?>
-                                            <button class="btn btn-danger" disabled>Favoritado</button>
+                                            <form action=<?php echo htmlspecialchars("libraries/favorites_helper.php" . ($favoritos_filter ? "?favoritos=true" : "")); ?> method="post">
+                                                <button class="btn btn-danger" disabled>Favoritado</button>
+                                                <input type="hidden" name="id_conteudo" value="<?php echo $conteudo['id']; ?>">
+                                                <button type="submit" class="btn btn-primary">Remover dos favoritos</button>
+                                            </form>
                                         <?php else: ?>
-                                            <form action="favoritar.php" method="post">
+                                            <form action="libraries/favorites_helper.php" method="post">
                                                 <input type="hidden" name="id_conteudo" value="<?php echo $conteudo['id']; ?>">
                                                 <button type="submit" class="btn btn-primary">Favoritar</button>
                                             </form>
@@ -63,6 +66,17 @@ include('libraries/contents_helper.php');
                                 </div>
                             </div>
                         <?php endforeach; ?>
+                        <?php if (count($conteudos) === 0): ?>
+                            <div class="alert alert-warning" role="alert">
+                                <?php if ($favoritos_filter): ?>
+                                    <h4 class="alert-heading">Nenhum conteúdo favoritado</h4>
+                                    <p>Você ainda não favoritou nenhum conteúdo. <a href="contents.php">Clique aqui</a> para ver os conteúdos disponíveis.</p>
+                                <?php else: ?>
+                                    <h4 class="alert-heading">Nenhum conteúdo disponível</h4>
+                                    <p>Não há conteúdos disponíveis no momento. Por favor, tente novamente mais tarde.</p>
+                                <?php endif; ?>
+                            </div>
+                        <?php endif; ?>
                     </div>
                 <?php endif; ?>
             </div>

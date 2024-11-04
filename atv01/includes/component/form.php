@@ -1,6 +1,11 @@
 <?php include('libraries/form_helper.php') ?>
 <section class="content">
-    <div class="container mt-5 pt-5">
+    <div class="container mt-5">
+        <?php if (isset($_GET['msg'])): ?>
+            <div class="alert alert-info">
+                <?= htmlspecialchars($_GET['msg']) ?>
+            </div>
+        <?php endif; ?>
         <div class="col-md-12 dark-mode px-0">
             <div class="card card-primary">
                 <div class="card-header">

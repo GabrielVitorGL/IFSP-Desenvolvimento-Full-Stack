@@ -9,6 +9,19 @@
                     </a>
                 </li>
                 <li class="nav-item pt-3">
+                    <a href="contents.php" class="nav-link custom-text">
+                        <i class="nav-icon fas fa-film"></i>
+                        <p>Conteúdos</p>
+                    </a>
+                </li>
+                <!-- favoritos-->
+                <li class="nav-item pt-3">
+                    <a href="contents.php?favoritos=true" class="nav-link custom-text">
+                        <i class="nav-icon fas fa-heart"></i>
+                        <p>Favoritos</p>
+                    </a>
+                </li>
+                <li class="nav-item pt-3">
                     <a href="form_page.php" class="nav-link custom-text">
                         <i class="nav-icon fas fa-pencil-alt"></i>
                         <p>Assine Agora</p>

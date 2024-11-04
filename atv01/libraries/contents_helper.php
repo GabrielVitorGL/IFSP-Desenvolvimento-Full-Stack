@@ -12,13 +12,20 @@ if ($conn->connect_error) {
 }
 
 $user_id = isset($_SESSION['user_id']) ? $_SESSION['user_id'] : null;
+$favoritos_filter = isset($_GET['favoritos']) && $_GET['favoritos'] === 'true';
+$page_title = "Conteúdos Disponíveis";
 
 if (!$user_id) {
     $page_title = "Área restrita";
-    $error_message = "Essa área é restrita para usuários cadastrados. Por favor, cadastre-se ou faça login.";
+    $error_message = "Essa área é restrita para usuários cadastrados. Por favor, cadastre-se";
 } else {
-    // Consultar todos os conteúdos
     $conteudos_sql = "SELECT * FROM conteudos";
+
+    if ($favoritos_filter) {
+        $conteudos_sql .= " WHERE id IN (SELECT id_conteudo FROM conteudos_favoritos WHERE id_cliente = $user_id)";
+        $page_title = "Conteúdos Favoritos";
+    }
+
     $conteudos_result = $conn->query($conteudos_sql);
     $conteudos = [];
 
@@ -28,7 +35,6 @@ if (!$user_id) {
         }
     }
 
-    // Consultar os conteúdos favoritos do usuário
     $favoritos_sql = "SELECT id_conteudo FROM conteudos_favoritos WHERE id_cliente = $user_id";
     $favoritos_result = $conn->query($favoritos_sql);
     $favoritos = [];
@@ -38,8 +44,6 @@ if (!$user_id) {
             $favoritos[] = $row['id_conteudo'];
         }
     }
-
-    $page_title = "Conteúdos disponíveis";
 }
 
 $conn->close();

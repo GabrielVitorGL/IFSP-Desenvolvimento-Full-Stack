@@ -16,11 +16,24 @@
                 Assinar
             </a>
         </li>
+        <li class="nav-item d-none d-sm-inline-block">
+            <a href="contents.php" class="nav-link custom-text">
+                Conteúdos
+            </a>
+        </li>
+        <li class="nav-item d-none d-sm-inline-block">
+            <a href="contents.php?favoritos=true" class="nav-link custom-text">
+                Conteúdos Favoritos
+            </a>
+        </li>
     </ul>
 
     <ul class="navbar-nav ml-auto">
-
-
+        <li class="nav-item">
+            <a class="nav-link" href="profile.php" role="button">
+                <i class="fas fa-user custom-text"></i>
+            </a>
+        </li>
         <li class="nav-item">
             <a class="nav-link" href="#" role="button" id="darkmode">
                 <i class="fas fa-moon custom-text"></i>

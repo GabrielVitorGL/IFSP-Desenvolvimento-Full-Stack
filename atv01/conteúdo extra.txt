@@ -24,16 +24,18 @@ Botão para fechar/abrir sidebar com texto e ícone dinâmico
 
 Criptografia de senha para salvar os dados no banco
 
-Armazenamento do id do usuário logado no localstorage para consultas
+Armazenamento do id do usuário logado no localstorage para consultas específicas para usuário logado
 
 Tela customizada para sucesso ou falha no login
 
 Criação de todas as tabelas e inserção de dados para cada uma
 
-Página de filmes/séries com imagens, descrição, classificação e ano de lançamento
+•	Página de filmes/séries com imagens, descrição, classificação, tipo, duração e ano de lançamento
 
 Opção de favoritar filmes/séries com interação com o banco
 
 Página de filmes/séries favoritos com opção de remover favorito
 
-Página de perfil com informações do usuário e opção de editar
+Página de perfil com informações do usuário e opção de editar, assim como alterar a senha
+
+Opção de exluir conta do usuário logado, com modal de confirmação
