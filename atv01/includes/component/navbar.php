@@ -17,6 +17,11 @@
             </a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
+            <a href="recent.php" class="nav-link custom-text">
+                Adicionados Recentemente
+            </a>
+        </li>
+        <li class="nav-item d-none d-sm-inline-block">
             <a href="contents.php" class="nav-link custom-text">
                 Conteúdos
             </a>

@@ -1,0 +1,18 @@
+Lista das classes utilizadas:
+- Database
+- Content
+
+Motivo de uso destas classes:
+- Classe Database:
+  A classe Database cuida da parte de conexão com o banco de dados, evitando repetição de código e permitindo que qualquer página que precise acessar o banco possa reutilizar esta classe
+
+- Classe Content:
+  A classe Content se refere a tabela de  conteúdos do nosso banco de dados. ela conterá os métodos que iremos utilizar relacionados à eles
+  A escolha dessa classe foi pela ideia da criação da página de conteúdos recentes, pois essa página tem a função de divulgar e mostrar para
+  os possiveis clientes que estamos sempre adicionando novos conteúdos e para que eles possam acompanhar parte do catálogo. A escolha principal
+  foi pelo fato de que essa página poderá ser acessada mesmo sem fazer login, o que a torna uma página de acesso público e facilita a visualização
+
+Comparação:
+
+Antes o código gerenciava a conexão e as operações do banco diretamente na página, o que tornava o código mais difícil de manter
+Com o POO, o código fica mais organizado e mais fácil de manter e escalar, quando precisarmos adicionar novas páginas ou funcionalidades

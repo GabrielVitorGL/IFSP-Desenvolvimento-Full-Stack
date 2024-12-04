@@ -14,11 +14,16 @@
                         <p>Conteúdos</p>
                     </a>
                 </li>
-                <!-- favoritos-->
                 <li class="nav-item pt-3">
                     <a href="contents.php?favoritos=true" class="nav-link custom-text">
                         <i class="nav-icon fas fa-heart"></i>
                         <p>Favoritos</p>
+                    </a>
+                </li>
+                <li class="nav-item pt-3">
+                    <a href="recent.php" class="nav-link custom-text">
+                        <i class="nav-icon fas fa-clock"></i>
+                        <p>Conteúdos Recentes</p>
                     </a>
                 </li>
                 <li class="nav-item pt-3">
