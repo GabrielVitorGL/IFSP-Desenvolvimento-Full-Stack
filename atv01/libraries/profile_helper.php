@@ -1,11 +1,9 @@
 <?php
-
+include('database_helper.php');
 session_start();
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "maximus";
+$database = new Database();
+$conn = $database->connect();
 
 $page_title = "Perfil";
 
@@ -13,11 +11,6 @@ $nome = '';
 $email = '';
 $telefone = '';
 $data_nascimento = '';
-
-$conn = new mysqli($servername, $username, $password, $dbname);
-if ($conn->connect_error) {
-    die("Conexão falhou: " . $conn->connect_error);
-}
 
 $user_id = isset($_SESSION['user_id']) ? $_SESSION['user_id'] : null;
 if (!$user_id) {

@@ -1,15 +1,9 @@
 <?php
+include('database_helper.php');
 session_start();
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "maximus";
-
-$conn = new mysqli($servername, $username, $password, $dbname);
-if ($conn->connect_error) {
-    die("Conexão falhou: " . $conn->connect_error);
-}
+$database = new Database();
+$conn = $database->connect();
 
 $user_id = isset($_SESSION['user_id']) ? $_SESSION['user_id'] : null;
 if (!$user_id) {
@@ -40,12 +34,12 @@ try {
     session_unset();
     session_destroy();
 
+    $conn->close();
     header("Location: ../form_page.php?msg=" . urlencode("Conta excluída com sucesso."));
     exit;
 } catch (Exception $e) {
     $conn->rollback();
+    $conn->close();
     header("Location: ../profile.php?msg=" . urlencode("Erro ao excluir a conta."));
     exit;
 }
-
-$conn->close();

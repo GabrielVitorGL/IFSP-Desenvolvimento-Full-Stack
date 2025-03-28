@@ -1,10 +1,7 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "maximus";
-
-$conn = new mysqli($servername, $username, $password, $dbname);
+include('database_helper.php');
+$database = new Database();
+$conn = $database->connect();
 
 if ($conn->connect_error) {
     die("Conexão falhou: " . $conn->connect_error);

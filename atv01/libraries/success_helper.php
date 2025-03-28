@@ -1,5 +1,5 @@
 <?php
-
+include('database_helper.php');
 $nome = htmlspecialchars($_POST['name']);
 $email = htmlspecialchars($_POST['email']);
 $telefone = htmlspecialchars($_POST['phone']);
@@ -8,12 +8,8 @@ $id_plano = (int)str_replace('plan', '', $_POST['plan']);
 
 // pegar nome do plano no banco
 
-$servername = 'localhost';
-$username = 'root';
-$password = '';
-$dbname = 'maximus';
-
-$conn = new mysqli($servername, $username, $password, $dbname);
+$database = new Database();
+$conn = $database->connect();
 
 if ($conn->connect_error) {
     die("Conexão falhou: " . $conn->connect_error);

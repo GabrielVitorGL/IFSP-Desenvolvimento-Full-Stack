@@ -1,14 +1,6 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "maximus";
-
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-if ($conn->connect_error) {
-    die("Conexão falhou: " . $conn->connect_error);
-}
+$database = new Database();
+$conn = $database->connect();
 
 $nome = $conn->real_escape_string($_POST['name']);
 $email = $conn->real_escape_string($_POST['email']);

@@ -1,15 +1,9 @@
 <?php
+include('database_helper.php');
 session_start();
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "maximus";
-
-$conn = new mysqli($servername, $username, $password, $dbname);
-if ($conn->connect_error) {
-    die("Conexão falhou: " . $conn->connect_error);
-}
+$database = new Database();
+$conn = $database->connect();
 
 $user_id = isset($_SESSION['user_id']) ? $_SESSION['user_id'] : null;
 $favoritos_filter = isset($_GET['favoritos']) && $_GET['favoritos'] === 'true';
